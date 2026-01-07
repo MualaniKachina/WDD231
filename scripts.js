@@ -7,46 +7,48 @@ const courses = [
 
 const courseList = document.querySelector("#course-list");
 const creditDisplay = document.querySelector("#total-credits");
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".filters button");
 
 function displayCourses(courseArray) {
   courseList.innerHTML = "";
 
   courseArray.forEach(course => {
-    const div = document.createElement("div");
-    div.classList.add("course");
+    const card = document.createElement("article");
+    card.classList.add("course");
 
     if (course.completed) {
-      div.classList.add("completed");
+      card.classList.add("completed");
     }
 
-    div.innerHTML = `
-      <strong>${course.subject} ${course.number}</strong><br>
-      ${course.title}<br>
-      Credits: ${course.credits}
+    card.innerHTML = `
+      <h4>${course.subject} ${course.number}</h4>
+      <p>${course.title}</p>
+      <p>Credits: ${course.credits}</p>
+      <p class="status">
+        ${course.completed ? "✔ Completed" : "⏳ In Progress"}
+      </p>
     `;
 
-    courseList.appendChild(div);
+    courseList.appendChild(card);
   });
 
-  const totalCredits = courseArray.reduce(
-    (sum, course) => sum + course.credits,
-    0
-  );
+  calculateCredits(courseArray);
+}
 
-  creditDisplay.textContent = totalCredits;
+function calculateCredits(courseArray) {
+  const total = courseArray.reduce((sum, course) => sum + course.credits, 0);
+  creditDisplay.textContent = total;
 }
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     const subject = button.dataset.subject;
+    const filteredCourses =
+      subject === "all"
+        ? courses
+        : courses.filter(course => course.subject === subject);
 
-    if (subject === "all") {
-      displayCourses(courses);
-    } else {
-      const filtered = courses.filter(course => course.subject === subject);
-      displayCourses(filtered);
-    }
+    displayCourses(filteredCourses);
   });
 });
 

@@ -12,9 +12,9 @@
 <body>
   <header>
     <h1>My Course Home Page</h1>
-    <nav>
+    <nav aria-label="Main Navigation">
       <ul class="nav">
-        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#" class="active" aria-current="page">Home</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">About</a></li>
       </ul>
@@ -23,13 +23,16 @@
 
   <main>
     <section class="filters">
-      <h2>Courses</h2>
+      <h2>Course Filters</h2>
       <button data-subject="all">All</button>
       <button data-subject="CSE">CSE</button>
       <button data-subject="WDD">WDD</button>
     </section>
 
-    <section id="course-list"></section>
+    <section class="courses">
+      <h2>My Courses</h2>
+      <div id="course-list"></div>
+    </section>
 
     <section class="credits">
       <h3>Total Credits: <span id="total-credits">0</span></h3>
@@ -38,7 +41,7 @@
 
   <footer>
     <p>
-      © <span id="year"></span> | Last Modified: 
+      © <span id="year"></span> | Last Modified:
       <span id="lastModified"></span>
     </p>
   </footer>
