@@ -21,7 +21,7 @@ function displayCourses(courseArray) {
     }
 
     card.innerHTML = `
-      <h4>${course.subject} ${course.number}</h4>
+      <h3>${course.subject} ${course.number}</h3>
       <p>${course.title}</p>
       <p>Credits: ${course.credits}</p>
       <p class="status">
@@ -36,25 +36,33 @@ function displayCourses(courseArray) {
 }
 
 function calculateCredits(courseArray) {
-  const total = courseArray.reduce((sum, course) => sum + course.credits, 0);
+  const total = courseArray
+    .filter(course => course.completed)
+    .reduce((sum, course) => sum + course.credits, 0);
+
   creditDisplay.textContent = total;
 }
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     const subject = button.dataset.subject;
-    const filteredCourses =
+    const filtered =
       subject === "all"
         ? courses
         : courses.filter(course => course.subject === subject);
 
-    displayCourses(filteredCourses);
+    displayCourses(filtered);
   });
 });
 
-// Footer dates
+/* Hamburger menu */
+document.querySelector("#menu-toggle").addEventListener("click", () => {
+  document.querySelector(".nav").classList.toggle("open");
+});
+
+/* Footer dates */
 document.querySelector("#year").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent = document.lastModified;
 
-// Initial load
+/* Initial load */
 displayCourses(courses);

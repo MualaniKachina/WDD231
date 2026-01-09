@@ -3,15 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WDD 131 Course Home Page">
+
+  <meta name="description"
+        content="WDD 131 course home page showing completed and in-progress web development courses with dynamic filtering and credit totals.">
+  <meta name="author" content="Edward Tiyari">
+
   <title>Course Home Page</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="scripts.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/styles.css">
+  <script defer src="scripts/scripts.js"></script>
 </head>
 
 <body>
   <header>
     <h1>My Course Home Page</h1>
+
+    <button id="menu-toggle" aria-label="Toggle Navigation">☰</button>
+
     <nav aria-label="Main Navigation">
       <ul class="nav">
         <li><a href="#" class="active" aria-current="page">Home</a></li>
@@ -31,11 +44,12 @@
 
     <section class="courses">
       <h2>My Courses</h2>
-      <div id="course-list"></div>
+      <div id="course-list" aria-live="polite"></div>
     </section>
 
     <section class="credits">
-      <h3>Total Credits: <span id="total-credits">0</span></h3>
+      <h2>Total Completed Credits</h2>
+      <p><strong><span id="total-credits">0</span></strong></p>
     </section>
   </main>
 
