@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Sunshine Bakery",
+    "address": "123 Main St, My City",
+    "phone": "555-1234",
+    "website": "https://sunshinebakery.com",
+    "image": "1.jpg",
+    "membership": "Gold"
+  },
+  {
+    "name": "Tech Solutions",
+    "address": "456 Elm St, My City",
+    "phone": "555-5678",
+    "website": "https://techsolutions.com",
+    "image": "2.jpg",
+    "membership": "Silver"
+  },
+  {
+    "name": "Green Gardens",
+    "address": "789 Oak St, My City",
+    "phone": "555-9012",
+    "website": "https://greengardens.com",
+    "image": "3.jpg",
+    "membership": "Member"
+  },
+  {
+    "name": "Fitness Hub",
+    "address": "321 Maple Ave, My City",
+    "phone": "555-3456",
+    "website": "https://fitnesshub.com",
+    "image": "4.jpg",
+    "membership": "Gold"
+  },
+  {
+    "name": "City Bookstore",
+    "address": "654 Pine St, My City",
+    "phone": "555-7890",
+    "website": "https://citybookstore.com",
+    "image": "5.jpg",
+    "membership": "Silver"
+  },
+  {
+    "name": "Cafe Delight",
+    "address": "987 Cedar Rd, My City",
+    "phone": "555-2345",
+    "website": "https://cafedelight.com",
+    "image": "6.jpg",
+    "membership": "Member"
+  },
+  {
+    "name": "Pet Care Center",
+    "address": "135 Birch St, My City",
+    "phone": "555-6789",
+    "website": "https://petcarecenter.com",
+    "image": "7.jpg",
+    "membership": "Gold"
+  }
+]
